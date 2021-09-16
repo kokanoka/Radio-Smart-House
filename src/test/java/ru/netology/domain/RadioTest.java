@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RadioTest {
     Radio radio = new Radio();
-    Radio radio1 = new Radio(6, 5);
 
     @Test
     void setCurrentStationNumber() {
@@ -101,10 +100,16 @@ class RadioTest {
     }
 
     @Test
-    void setCurrentOverMaximumStation() {
-        radio1.setCurrentStationNumber(9);
-        assertEquals(0,radio1.getCurrentStationNumber());
+    void setCurrentStationNumber2() {
+        Radio radio1 = new Radio(6);
+        radio1.setCurrentStationNumber(5);
+        assertEquals(5,radio1.getCurrentStationNumber());
+    }
 
-
+    @Test
+    void setMaxStationNumber() {
+        Radio radio1 = new Radio(6);
+        radio1.setMaxStationNumber(5);
+        assertEquals(5, radio1.getMaxStationNumber());
     }
 }
